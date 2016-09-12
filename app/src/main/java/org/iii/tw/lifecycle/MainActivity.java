@@ -1,14 +1,18 @@
 package org.iii.tw.lifecycle;
 
+import android.content.Intent;
+import android.sax.StartElementListener;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.InputEvent;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-     public MainActivity(){
-         Log.d("chuan", "MainActivity");
-     }
+    public MainActivity() {
+        Log.d("chuan", "MainActivity");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +56,13 @@ public class MainActivity extends AppCompatActivity {
         Log.d("chuan", "onDestroy");
     }
 
-    public void gotopage2(View v){
+    public void gotopage2(View v) {
+        Intent intent = new Intent(this, Page2Activity.class);
+        startActivity(intent);
 
+    }
+
+    public void exit(View v) {
+        finish();
     }
 }
